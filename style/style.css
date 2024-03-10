@@ -28,6 +28,10 @@ p {
   color: #fff;
 }
 
+br {
+  display: none;
+}
+
 header, main {
   background-color: #151515;
 }
@@ -92,6 +96,7 @@ header .absolute {
 header .absolute p {
   font-size: 24px;
   padding: 20px 0;
+  color: #fff;
 }
 header #picture {
   width: 100%;
@@ -100,7 +105,6 @@ header #picture #mobile {
   position: relative;
   z-index: 1;
   width: 175px;
-  display: block;
   margin: auto;
 }
 header #picture #tablet {
@@ -196,13 +200,12 @@ main #contact {
   position: relative;
 }
 main #contact .background-rings {
-  width: 150%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   background-image: url(../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
+  background-position: -350px 400px;
   position: absolute;
-  left: -340px;
-  top: 68%;
   z-index: 1;
 }
 main #contact h1 {
@@ -250,6 +253,73 @@ footer h5 {
   font-weight: bold;
   padding-top: 40px;
   padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    position: relative;
+  }
+  header .background-circle {
+    z-index: 1;
+    background-position: calc(100% + 60px) 460px;
+  }
+  header .background-rings {
+    background-position: -280px 70px;
+  }
+  header .absolute {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  header .absolute p {
+    padding: 30px 0 90px 30px;
+    margin: 0;
+    font-size: 32px;
+  }
+  header .absolute .socmed {
+    margin: 0;
+    padding: 30px;
+  }
+  header .absolute .socmed li img {
+    width: 24px;
+  }
+  header #picture {
+    position: absolute;
+    width: 320px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  header #picture #mobile {
+    display: none;
+  }
+  header #picture #tablet {
+    display: inline;
+    width: 100%;
+  }
+  header .header-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 30px;
+    width: 445px;
+    text-align: left;
+  }
+  header .header-text br {
+    display: inline;
+  }
+  header .header-text h1 {
+    font-size: 72px;
+    line-height: 72px;
+    padding: 0;
+  }
+  header .header-text p {
+    padding: 0;
+    padding-top: 80px;
+    font-size: 18px;
+  }
+  main #contact .background-rings {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
