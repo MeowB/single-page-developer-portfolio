@@ -1,0 +1,308 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+// COLORS
+$c-black: #151515;
+$c-green: #4EE1A0;
+$c-dark-grey: #242424;
+$c-light-grey: #D9D9D9;
+$c-white: #fff;
+
+// TYPOGRAPHY
+h1 {
+	font-size: 80px;
+	line-height: 88px;
+	letter-spacing: -2.5px;
+}
+
+h2 {
+	font-size: 48px;
+	line-height: 56px;
+	letter-spacing: -1.5px;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+// RESET
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "space grotesk";
+	color: $c-white;
+}
+
+header, main {
+	background-color: $c-black;
+}
+
+footer, #contact {
+	background-color: $c-dark-grey;
+}
+
+button, input[type="button"] {
+	width: fit-content;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-decoration: none;
+	letter-spacing: 2px;
+	border: none;
+	border-bottom: 2px solid $c-green;
+	padding-bottom: 12px;
+	background-color: rgba(0, 0, 0 , 0);
+}
+
+.socmed {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	width: 150px;
+	margin: auto;
+	position: relative;
+	z-index: 2;
+	color: $c-white;
+
+	li {
+		img {
+			width: 19px;
+		}
+	}
+}
+
+header {
+	text-align: center;
+	position: relative;
+	padding-bottom: 80px;
+
+	.background-rings {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(../assets/images/pattern-rings.svg);
+		background-repeat: no-repeat;
+		background-position: -350px 125px;
+	}
+	
+	.background-circle {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(../assets/images/pattern-circle.svg);
+		background-repeat: no-repeat;
+		background-position: calc(100% + 60px) 275px;
+	}
+
+	.absolute {
+		position: absolute;
+		width: 100%;
+		margin: auto;
+		p {
+			font-size: 24px;
+			padding: 20px 0;
+		}
+	
+
+	}
+
+
+	#picture {
+		width: 100%;
+
+
+		#mobile {
+			position: relative;
+			z-index: 1;
+			width: 175px;
+			display: block;
+			margin: auto;
+		}
+
+		#tablet {
+			display: none;
+		}
+
+		#desktop {
+			display: none;
+		}
+	}
+
+	h1 {
+		font-size: 40px;
+		line-height: 40px;
+		padding: 40px 15px;
+
+		span {
+			border-bottom: 4px solid $c-green;
+		}
+	}
+
+	p {
+		padding: 0 15px;
+		font-size: 16px;
+		margin-bottom: 25px;
+		color: $c-light-grey;
+	}
+
+	.line {
+		border-bottom: 1px solid $c-white;
+		padding-top: 92px;
+		width: 90%;
+		margin: auto;
+	}
+}
+
+main {
+	text-align: center;
+
+
+	#experience {
+
+		.background-rings {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url(../assets/images/pattern-rings.svg);
+			background-repeat: no-repeat;
+			background-position: calc(100% + 340px) 615px;
+		}
+		li {
+			padding-bottom: 25px;
+
+			h2 {
+				font-size: 32px;
+			}
+	
+			p {
+				font-size: 16px;
+				line-height: 26px;
+			}
+		}
+	}
+
+	.line {
+		border-top: 1px solid $c-white;
+		padding-bottom: 80px;
+		width: 90%;
+		margin: 40px auto 0 auto;
+	}
+
+	#projects {
+		.header-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 90%;
+			margin: auto;
+
+			h1 {
+				font-size: 40px;
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding-bottom: 90px;
+			li {
+				width: 90%;
+				margin: auto;
+				text-align: left;
+
+				img {
+					width: 100%;
+					padding-bottom: 20px;
+					padding-top: 40px;
+				}
+
+				h3 {
+					padding-bottom: 10px;
+				}
+
+				p {
+					padding-bottom: 20px;
+					color: $c-light-grey;
+				}
+
+				button {
+					margin-right: 30px;
+				}
+			}
+		}
+	}
+
+	#contact {
+		padding-top: 60px;
+		position: relative;
+
+		.background-rings {
+			width: 150%;
+			height: 50%;
+			background-image: url(../assets/images/pattern-rings.svg);
+			background-repeat: no-repeat;
+			position: absolute;
+			left: -340px;
+			top: 68%;
+			z-index: 1;
+		}
+
+		h1 {
+			font-size: 40px;
+		}
+
+		p {
+			color: $c-light-grey;
+			font-size: 16px;
+			padding: 0 5px;
+			padding-bottom: 50px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 90%;
+			margin: auto;
+			align-items: end;
+			padding-bottom: 80px;
+			border-bottom: 1px solid $c-white;
+
+			input[name="name"], input[name="email"], input[name="message"] {
+				width: 90%;
+				background-color: $c-dark-grey;
+				border: none;
+				border-bottom: 1px solid $c-white;
+				padding: 0 0 15px 25px;
+				margin-bottom: 30px;
+				font-weight: bold;
+			}
+
+			input[name="message"] {
+				position: relative;
+				height: 100px;
+			}
+			
+			input[name="message"]::placeholder {
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	padding-bottom: 60px;
+	h5 {
+		font-size: 24px;
+		font-weight: bold;
+		padding-top: 40px;
+		padding-bottom: 20px;
+	}
+
+}

@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+h1 {
+  font-size: 80px;
+  line-height: 88px;
+  letter-spacing: -2.5px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "space grotesk";
+  color: #fff;
+}
+
+header, main {
+  background-color: #151515;
+}
+
+footer, #contact {
+  background-color: #242424;
+}
+
+button, input[type=button] {
+  width: fit-content;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border: none;
+  border-bottom: 2px solid #4EE1A0;
+  padding-bottom: 12px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.socmed {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 150px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.socmed li img {
+  width: 19px;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  padding-bottom: 80px;
+}
+header .background-rings {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/pattern-rings.svg);
+  background-repeat: no-repeat;
+  background-position: -350px 125px;
+}
+header .background-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/pattern-circle.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 60px) 275px;
+}
+header .absolute {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+}
+header .absolute p {
+  font-size: 24px;
+  padding: 20px 0;
+}
+header #picture {
+  width: 100%;
+}
+header #picture #mobile {
+  position: relative;
+  z-index: 1;
+  width: 175px;
+  display: block;
+  margin: auto;
+}
+header #picture #tablet {
+  display: none;
+}
+header #picture #desktop {
+  display: none;
+}
+header h1 {
+  font-size: 40px;
+  line-height: 40px;
+  padding: 40px 15px;
+}
+header h1 span {
+  border-bottom: 4px solid #4EE1A0;
+}
+header p {
+  padding: 0 15px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #D9D9D9;
+}
+header .line {
+  border-bottom: 1px solid #fff;
+  padding-top: 92px;
+  width: 90%;
+  margin: auto;
+}
+
+main {
+  text-align: center;
+}
+main #experience .background-rings {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/pattern-rings.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 340px) 615px;
+}
+main #experience li {
+  padding-bottom: 25px;
+}
+main #experience li h2 {
+  font-size: 32px;
+}
+main #experience li p {
+  font-size: 16px;
+  line-height: 26px;
+}
+main .line {
+  border-top: 1px solid #fff;
+  padding-bottom: 80px;
+  width: 90%;
+  margin: 40px auto 0 auto;
+}
+main #projects .header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+main #projects .header-row h1 {
+  font-size: 40px;
+}
+main #projects ul {
+  list-style: none;
+  padding-bottom: 90px;
+}
+main #projects ul li {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+main #projects ul li img {
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+main #projects ul li h3 {
+  padding-bottom: 10px;
+}
+main #projects ul li p {
+  padding-bottom: 20px;
+  color: #D9D9D9;
+}
+main #projects ul li button {
+  margin-right: 30px;
+}
+main #contact {
+  padding-top: 60px;
+  position: relative;
+}
+main #contact .background-rings {
+  width: 150%;
+  height: 50%;
+  background-image: url(../assets/images/pattern-rings.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -340px;
+  top: 68%;
+  z-index: 1;
+}
+main #contact h1 {
+  font-size: 40px;
+}
+main #contact p {
+  color: #D9D9D9;
+  font-size: 16px;
+  padding: 0 5px;
+  padding-bottom: 50px;
+}
+main #contact form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  align-items: end;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #fff;
+}
+main #contact form input[name=name], main #contact form input[name=email], main #contact form input[name=message] {
+  width: 90%;
+  background-color: #242424;
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding: 0 0 15px 25px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+main #contact form input[name=message] {
+  position: relative;
+  height: 100px;
+}
+main #contact form input[name=message]::placeholder {
+  position: absolute;
+  top: 0;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 60px;
+}
+footer h5 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
