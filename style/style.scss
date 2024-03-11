@@ -51,7 +51,7 @@ footer, #contact {
 	background-color: $c-dark-grey;
 }
 
-button, input[type="button"] {
+button, input[type="submit"] {
 	width: fit-content;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -62,6 +62,11 @@ button, input[type="button"] {
 	border-bottom: 2px solid $c-green;
 	padding-bottom: 12px;
 	background-color: rgba(0, 0, 0 , 0);
+	cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+	color: $c-green;
 }
 
 .socmed {
@@ -74,9 +79,13 @@ button, input[type="button"] {
 	z-index: 2;
 	color: $c-white;
 
-	li {
-		img {
-			width: 19px;
+	
+}
+
+.socmed {
+	a:hover {
+		svg path {
+			fill: $c-green;
 		}
 	}
 }
@@ -138,22 +147,31 @@ header {
 		}
 	}
 
-	h1 {
-		font-size: 40px;
-		line-height: 40px;
-		padding: 40px 15px;
+	.header-text{
+		
+		h1 {
+			font-size: 40px;
+			line-height: 40px;
+			padding: 40px 15px;
 
-		span {
-			border-bottom: 4px solid $c-green;
+			span {
+				border-bottom: 4px solid $c-green;
+			}
+		}
+
+		p {
+			padding: 0 15px;
+			font-size: 16px;
+			margin-bottom: 25px;
+			color: $c-light-grey;
+		}
+
+		button {
+			position: relative;
+			z-index: 2;
 		}
 	}
 
-	p {
-		padding: 0 15px;
-		font-size: 16px;
-		margin-bottom: 25px;
-		color: $c-light-grey;
-	}
 
 	.line {
 		border-bottom: 1px solid $c-white;
@@ -168,6 +186,7 @@ main {
 
 
 	#experience {
+		position: relative;
 
 		.background-rings {
 			position: absolute;
@@ -177,6 +196,7 @@ main {
 			background-repeat: no-repeat;
 			background-position: calc(100% + 340px) 615px;
 		}
+
 		li {
 			padding-bottom: 25px;
 
@@ -187,6 +207,7 @@ main {
 			p {
 				font-size: 16px;
 				line-height: 26px;
+				color: $c-light-grey;
 			}
 		}
 	}
@@ -209,6 +230,10 @@ main {
 			h1 {
 				font-size: 40px;
 			}
+
+			button {
+				z-index: 2;
+			}
 		}
 
 		ul {
@@ -219,19 +244,26 @@ main {
 				margin: auto;
 				text-align: left;
 
+				.button-hover {
+					display: none;
+				}
+
 				img {
 					width: 100%;
-					padding-bottom: 20px;
-					padding-top: 40px;
+					margin-bottom: 20px;
+					margin-top: 40px;
 				}
 
 				h3 {
 					padding-bottom: 10px;
+					text-transform: uppercase;
 				}
 
 				p {
 					padding-bottom: 20px;
 					color: $c-light-grey;
+					text-transform: uppercase;
+					word-spacing: 20px;
 				}
 
 				button {
@@ -241,19 +273,22 @@ main {
 		}
 	}
 
+	// Contact background rings
+	.background-rings {
+		width: 100%;
+		height: 100%;
+		background-image: url(../assets/images/pattern-rings.svg);
+		background-repeat: no-repeat;
+		background-position: calc(100% + 350px) 620px;
+		position: absolute;
+		z-index: 1;
+		pointer-events: none;
+	}
+
 	#contact {
 		padding-top: 60px;
 		position: relative;
 
-		.background-rings {
-			width: 100%;
-			height: 100%;
-			background-image: url(../assets/images/pattern-rings.svg);
-			background-repeat: no-repeat;
-			background-position: -350px 400px;
-			position: absolute;
-			z-index: 1;
-		}
 
 		h1 {
 			font-size: 40px;
@@ -264,9 +299,12 @@ main {
 			font-size: 16px;
 			padding: 0 5px;
 			padding-bottom: 50px;
+			width: 90%;
+			margin: auto;
 		}
 
 		form {
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			width: 90%;
@@ -275,14 +313,29 @@ main {
 			padding-bottom: 80px;
 			border-bottom: 1px solid $c-white;
 
+			.error-div {
+				color: #ff7a7a;
+				margin-top: 5px;
+				position: relative;
+				
+				i {
+					position: absolute;
+					top: -40px;
+					right: 0;
+				}
+			}
+
 			input[name="name"], input[name="email"], input[name="message"] {
-				width: 90%;
+				width: -webkit-fill-available;
 				background-color: $c-dark-grey;
 				border: none;
 				border-bottom: 1px solid $c-white;
 				padding: 0 0 15px 25px;
-				margin-bottom: 30px;
 				font-weight: bold;
+			}
+
+			input[name="email"], input[name="message"], input[type="submit"] {
+				margin-top: 30px;
 			}
 
 			input[name="message"] {
@@ -294,6 +347,7 @@ main {
 				position: absolute;
 				top: 0;
 			}
+
 		}
 	}
 }
@@ -338,11 +392,6 @@ footer {
 				margin: 0;
 				padding: 30px;
 				
-				li {
-					img {
-						width: 24px;
-					}
-				}
 			}
 		}
 		
@@ -364,8 +413,7 @@ footer {
 
 		.header-text {
 			position: relative;
-			z-index: 2;
-			padding-left: 30px;
+			padding-left: 5%;
 			width: 445px;
 			text-align: left;
 
@@ -385,16 +433,321 @@ footer {
 				font-size: 18px;
 			}
 		}
+	}
 
-		h1 {
+	main {
+		// experience background rings
+		.background-rings {
+			background-position: calc(100% + 300px) 330px;
+		}
+		
+		#experience {
+			display: flex;
+			flex-wrap: wrap;
+			width: 90%;
+			margin: auto;
+			list-style: none;
+			padding-bottom: 50px;
+
+			li {
+				width: 50%;
+				text-align: left;
+				padding-bottom: 50px;
+				h2 {
+					font-size: 48px;
+					padding-bottom: 15px;
+				}
+
+				p {
+					font-size: 18px;
+				}
+			}
+
+			.line {
+				display: none;
+			}
+		}
+
+		#projects {
+			.header-row {
+				h1 {
+					font-size: 72px;
+				}
+			}
+
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				width: 90%;
+				margin: auto;
+				li {
+					width: calc(50% - 20px);
+					padding: 10px;
+
+				}
+			}
+		}
+
+		#contact {
+
+			.background-rings {
+				background-position: -380px 470px;
+			}
+
+			p, form {
+				width: 445px;
+			}
+
+			h1 {
+				font-size: 72px;
+			}
+
+			p {
+				font-size: 18px;
+			}
+
+			form {
+				border: none;
+			}
+		}
+	}
+
+	footer {
+		.wrapper {
+			width: 90%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: auto;
+			border-top: 1px solid $c-white;
+			padding-top: 30px;
+
+			.line {
+				border-top: 1px solid $c-white;
+			}
+
+			h5 {
+				padding: 0;
+			}
+
+			.socmed {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media only screen and(min-width: 1440px) {
+	header {
+		position: relative;
+		height: 720px;
+		padding-bottom: 100px;
+
+		.background-circle {
+			background-position: calc(100% - 550px) 520px;
+		}
+
+		.background-rings {
+			background-position: -100px 130px;
+		}
+
+		.absolute {
+			p {
+				padding: 0;
+				padding-top: 40px;
+			}
+
+			.socmed {
+				padding: 0;
+				padding-top: 40px;
+				padding-right: 30px;
+			}
+		}
+
+		.wrapper {
+			width: calc(100% - (165px * 2));
+			position: relative;
+			margin: auto;
+			height: fit-content;
+			#picture {
+				position: absolute;
+				width: 445px;
+				top: 0;
+				right: 0;
+				z-index: 0;
+	
+				#tablet {
+					display: none;
+				}
+	
+				#desktop {
+					display: block;
+					width: 100%;
+				}
+			}
+	
+			.header-text {
+				position: relative;
+				z-index: 2;
+				padding-left: 0;
+				padding-top: 125px;
+				width: 725px;
+	
+				br {
+					display: none;
+				}
+	
+				h1 {
+					font-size: 88px;
+					line-height: 88px;
+					padding: 0;
+				}
+	
+				p {
+					padding: 0;
+					padding-top: 40px;
+					font-size: 18px;
+					width: 445px;
+				}
+
+				button {
+					padding-top: 65px;
+				}
+			}
+
+			.line {
+				display: none;
+			}
 		}
 	}
 
 	main {
-		#contact {
-			.background-rings {
-				width: 100%;
+		#experience, #projects {
+			
+		width: calc(100% - (165px * 2));
+		margin: auto;
+		}
+
+		.background-rings {
+			background-position: calc(100% + 200px) 240px;
+		}
+
+		#experience {
+			border-top: 1px solid $c-white;
+			padding-top: 70px;
+
+
+			li {
+				width: 33%;
 			}
+		}
+
+		#projects {
+			padding-bottom: 140px;
+
+			.header-row {
+				margin: 0;
+				width: 100%;
+				padding-bottom: 80px;
+			}
+
+			ul {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+
+				li {
+					position: relative;
+					line-height: 0;
+					
+					img {
+						margin: 0;
+					}
+
+					.image-filter{
+						position: relative;
+						width: 100%;
+						height: auto;
+					}
+
+					.button-hover {
+						display: flex;
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						opacity: 0;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						button {
+							margin: 0;
+						}
+						
+						button:first-child {
+							margin-bottom: 60px;
+						}
+					}
+
+					.button-hover:hover {
+						opacity: 1;
+						transition: 0.5s;
+						background-color: rgba(0, 0, 0, 0.7);
+					}
+
+					.button-hover:not(:hover) {
+						opacity: 0;
+						transition: 0.5s;
+					}
+
+					h3 {
+						padding-top: 20px;
+					}
+
+					.button-div {
+						display: none;
+					}
+				}
+			}
+		}
+
+		#contact {
+
+			.background-rings {
+				background-position: -200px 240px;
+			}
+			
+			.wrapper {
+				text-align: left;
+				width: calc(100% - (165px * 2));
+				display: flex;
+				justify-content: space-between;
+				margin: auto;
+
+				.contact-text {
+					p {
+						padding-top: 30px;
+					}
+				}
+
+				form {
+					margin: 0;
+					padding: 0;
+				}
+			}
+
+		}
+	}
+
+	footer {
+		padding-top: 80px;
+
+		.wrapper {
+			width: calc(100% - (165px * 2));
+
 		}
 	}
 }

@@ -40,7 +40,7 @@ footer, #contact {
   background-color: #242424;
 }
 
-button, input[type=button] {
+button, input[type=submit] {
   width: fit-content;
   font-size: 16px;
   text-transform: uppercase;
@@ -51,6 +51,11 @@ button, input[type=button] {
   border-bottom: 2px solid #4EE1A0;
   padding-bottom: 12px;
   background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover {
+  color: #4EE1A0;
 }
 
 .socmed {
@@ -63,8 +68,9 @@ button, input[type=button] {
   z-index: 2;
   color: #fff;
 }
-.socmed li img {
-  width: 19px;
+
+.socmed a:hover svg path {
+  fill: #4EE1A0;
 }
 
 header {
@@ -113,19 +119,23 @@ header #picture #tablet {
 header #picture #desktop {
   display: none;
 }
-header h1 {
+header .header-text h1 {
   font-size: 40px;
   line-height: 40px;
   padding: 40px 15px;
 }
-header h1 span {
+header .header-text h1 span {
   border-bottom: 4px solid #4EE1A0;
 }
-header p {
+header .header-text p {
   padding: 0 15px;
   font-size: 16px;
   margin-bottom: 25px;
   color: #D9D9D9;
+}
+header .header-text button {
+  position: relative;
+  z-index: 2;
 }
 header .line {
   border-bottom: 1px solid #fff;
@@ -136,6 +146,9 @@ header .line {
 
 main {
   text-align: center;
+}
+main #experience {
+  position: relative;
 }
 main #experience .background-rings {
   position: absolute;
@@ -154,6 +167,7 @@ main #experience li h2 {
 main #experience li p {
   font-size: 16px;
   line-height: 26px;
+  color: #D9D9D9;
 }
 main .line {
   border-top: 1px solid #fff;
@@ -171,6 +185,9 @@ main #projects .header-row {
 main #projects .header-row h1 {
   font-size: 40px;
 }
+main #projects .header-row button {
+  z-index: 2;
+}
 main #projects ul {
   list-style: none;
   padding-bottom: 90px;
@@ -180,33 +197,40 @@ main #projects ul li {
   margin: auto;
   text-align: left;
 }
+main #projects ul li .button-hover {
+  display: none;
+}
 main #projects ul li img {
   width: 100%;
-  padding-bottom: 20px;
-  padding-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 main #projects ul li h3 {
   padding-bottom: 10px;
+  text-transform: uppercase;
 }
 main #projects ul li p {
   padding-bottom: 20px;
   color: #D9D9D9;
+  text-transform: uppercase;
+  word-spacing: 20px;
 }
 main #projects ul li button {
   margin-right: 30px;
 }
-main #contact {
-  padding-top: 60px;
-  position: relative;
-}
-main #contact .background-rings {
+main .background-rings {
   width: 100%;
   height: 100%;
   background-image: url(../assets/images/pattern-rings.svg);
   background-repeat: no-repeat;
-  background-position: -350px 400px;
+  background-position: calc(100% + 350px) 620px;
   position: absolute;
   z-index: 1;
+  pointer-events: none;
+}
+main #contact {
+  padding-top: 60px;
+  position: relative;
 }
 main #contact h1 {
   font-size: 40px;
@@ -216,8 +240,11 @@ main #contact p {
   font-size: 16px;
   padding: 0 5px;
   padding-bottom: 50px;
+  width: 90%;
+  margin: auto;
 }
 main #contact form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -226,14 +253,26 @@ main #contact form {
   padding-bottom: 80px;
   border-bottom: 1px solid #fff;
 }
+main #contact form .error-div {
+  color: #ff7a7a;
+  margin-top: 5px;
+  position: relative;
+}
+main #contact form .error-div i {
+  position: absolute;
+  top: -40px;
+  right: 0;
+}
 main #contact form input[name=name], main #contact form input[name=email], main #contact form input[name=message] {
-  width: 90%;
+  width: -webkit-fill-available;
   background-color: #242424;
   border: none;
   border-bottom: 1px solid #fff;
   padding: 0 0 15px 25px;
-  margin-bottom: 30px;
   font-weight: bold;
+}
+main #contact form input[name=email], main #contact form input[name=message], main #contact form input[type=submit] {
+  margin-top: 30px;
 }
 main #contact form input[name=message] {
   position: relative;
@@ -280,9 +319,6 @@ footer h5 {
     margin: 0;
     padding: 30px;
   }
-  header .absolute .socmed li img {
-    width: 24px;
-  }
   header #picture {
     position: absolute;
     width: 320px;
@@ -299,8 +335,7 @@ footer h5 {
   }
   header .header-text {
     position: relative;
-    z-index: 2;
-    padding-left: 30px;
+    padding-left: 5%;
     width: 445px;
     text-align: left;
   }
@@ -317,8 +352,247 @@ footer h5 {
     padding-top: 80px;
     font-size: 18px;
   }
+
+  main .background-rings {
+    background-position: calc(100% + 300px) 330px;
+  }
+  main #experience {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding-bottom: 50px;
+  }
+  main #experience li {
+    width: 50%;
+    text-align: left;
+    padding-bottom: 50px;
+  }
+  main #experience li h2 {
+    font-size: 48px;
+    padding-bottom: 15px;
+  }
+  main #experience li p {
+    font-size: 18px;
+  }
+  main #experience .line {
+    display: none;
+  }
+  main #projects .header-row h1 {
+    font-size: 72px;
+  }
+  main #projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+  }
+  main #projects ul li {
+    width: calc(50% - 20px);
+    padding: 10px;
+  }
   main #contact .background-rings {
+    background-position: -380px 470px;
+  }
+  main #contact p, main #contact form {
+    width: 445px;
+  }
+  main #contact h1 {
+    font-size: 72px;
+  }
+  main #contact p {
+    font-size: 18px;
+  }
+  main #contact form {
+    border: none;
+  }
+
+  footer .wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    border-top: 1px solid #fff;
+    padding-top: 30px;
+  }
+  footer .wrapper .line {
+    border-top: 1px solid #fff;
+  }
+  footer .wrapper h5 {
+    padding: 0;
+  }
+  footer .wrapper .socmed {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header {
+    position: relative;
+    height: 720px;
+    padding-bottom: 100px;
+  }
+  header .background-circle {
+    background-position: calc(100% - 550px) 520px;
+  }
+  header .background-rings {
+    background-position: -100px 130px;
+  }
+  header .absolute p {
+    padding: 0;
+    padding-top: 40px;
+  }
+  header .absolute .socmed {
+    padding: 0;
+    padding-top: 40px;
+    padding-right: 30px;
+  }
+  header .wrapper {
+    width: calc(100% - (165px * 2));
+    position: relative;
+    margin: auto;
+    height: fit-content;
+  }
+  header .wrapper #picture {
+    position: absolute;
+    width: 445px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  header .wrapper #picture #tablet {
+    display: none;
+  }
+  header .wrapper #picture #desktop {
+    display: block;
     width: 100%;
+  }
+  header .wrapper .header-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 0;
+    padding-top: 125px;
+    width: 725px;
+  }
+  header .wrapper .header-text br {
+    display: none;
+  }
+  header .wrapper .header-text h1 {
+    font-size: 88px;
+    line-height: 88px;
+    padding: 0;
+  }
+  header .wrapper .header-text p {
+    padding: 0;
+    padding-top: 40px;
+    font-size: 18px;
+    width: 445px;
+  }
+  header .wrapper .header-text button {
+    padding-top: 65px;
+  }
+  header .wrapper .line {
+    display: none;
+  }
+
+  main #experience, main #projects {
+    width: calc(100% - (165px * 2));
+    margin: auto;
+  }
+  main .background-rings {
+    background-position: calc(100% + 200px) 240px;
+  }
+  main #experience {
+    border-top: 1px solid #fff;
+    padding-top: 70px;
+  }
+  main #experience li {
+    width: 33%;
+  }
+  main #projects {
+    padding-bottom: 140px;
+  }
+  main #projects .header-row {
+    margin: 0;
+    width: 100%;
+    padding-bottom: 80px;
+  }
+  main #projects ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  main #projects ul li {
+    position: relative;
+    line-height: 0;
+  }
+  main #projects ul li img {
+    margin: 0;
+  }
+  main #projects ul li .image-filter {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  main #projects ul li .button-hover {
+    display: flex;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  main #projects ul li .button-hover button {
+    margin: 0;
+  }
+  main #projects ul li .button-hover button:first-child {
+    margin-bottom: 60px;
+  }
+  main #projects ul li .button-hover:hover {
+    opacity: 1;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  main #projects ul li .button-hover:not(:hover) {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  main #projects ul li h3 {
+    padding-top: 20px;
+  }
+  main #projects ul li .button-div {
+    display: none;
+  }
+  main #contact .background-rings {
+    background-position: -200px 240px;
+  }
+  main #contact .wrapper {
+    text-align: left;
+    width: calc(100% - (165px * 2));
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+  main #contact .wrapper .contact-text p {
+    padding-top: 30px;
+  }
+  main #contact .wrapper form {
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    padding-top: 80px;
+  }
+  footer .wrapper {
+    width: calc(100% - (165px * 2));
   }
 }
 
